@@ -30,6 +30,7 @@ public class SplashScreen extends AppCompatActivity {
                 }
                 else {
                     mainIntent = new Intent(SplashScreen.this, UsageTutorial1.class);
+                    setFirstLogin();
                 }
 
                 SplashScreen.this.startActivity(mainIntent);
@@ -37,6 +38,12 @@ public class SplashScreen extends AppCompatActivity {
             }
         }, SPLASH_DISPLAY_LENGTH);
 
+    }
+
+    private void setFirstLogin() {
+        SharedPreferences.Editor editor = getSharedPreferences("isFirstLogin", MODE_PRIVATE).edit();
+        editor.putBoolean("isFirstLogin", true);
+        editor.apply();
     }
 
     private boolean checkIsFirstLogin() {

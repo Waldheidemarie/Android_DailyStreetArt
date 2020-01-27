@@ -18,7 +18,8 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        final boolean isFirstLogin = checkIsFirstLogin();
+        //final boolean isFirstLogin = checkIsFirstLogin();
+        final boolean isFirstLogin = false;
 
         new Handler().postDelayed(new Runnable(){
             @Override
